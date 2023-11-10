@@ -15,7 +15,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "app.pupalupa.junction2023"
     },
     "android": {
       "adaptiveIcon": {
