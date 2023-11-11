@@ -4,12 +4,17 @@ import UIKit
 class PlankView: UIView {
 
   @objc var onTime: RCTDirectEventBlock?
+  @objc var onText: RCTDirectEventBlock?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
     let qpView = PlankNativeView(onTime: { time in
       if self.onTime != nil {
         self.onTime!(["time": time])
+      }
+    }, onText: { text in
+      if self.onText != nil {
+        self.onText!(["text": text!])
       }
     })
 

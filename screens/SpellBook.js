@@ -13,8 +13,11 @@ export default function SpellBook() {
   return (
     <View style={styles.container}>
       <Image style={styles.background} source={require('../assets/scroll-background.jpg')} />
-      <Text style={[styles.header, { fontFamily: 'l-pixel-u', fontSize: 50, color: '#232323' }]}>SpellBook</Text>
       <ScrollView contentContainerStyle={styles.scrollView}>
+        <View style={styles.header}>
+          <Text style={styles.title}>SpellBook</Text>
+          <Text style={styles.subtitle}>Explore spells available for your next journeys</Text>
+        </View>
         {Array(10).fill(0).map((_, index) => (
           <View key={index} style={styles.row}>
             <View style={[styles.frame, { transform: randomRotation() }]}>
@@ -48,6 +51,16 @@ const styles = StyleSheet.create({
   },
   header: {
     marginVertical: 40
+  },
+  title: {
+    fontFamily: 'l-pixel-u',
+    fontSize: 50,
+    color: '#232323'
+  },
+  subtitle: {
+    fontFamily: 'l-pixel-u',
+    fontSize: 24,
+    color: '#232323'
   },
   scrollView: {
     paddingVertical: 10,

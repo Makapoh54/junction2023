@@ -6,29 +6,21 @@ struct JumpingNativeView: View {
   var quickPose = QuickPose(sdkKey: "01HEX1NKWFW0TXJEQN1BNQYENX")
 
   public let onJump: ((Int) -> ())
+  public let onText: ((String?) -> ())
 
   @State private var counter = QuickPoseThresholdCounter()
   @State var overlayImage: UIImage?
-  @State var feedbackText: String?
 
-  init(onJump: @escaping (Int) -> Void) {
+  init(onJump: @escaping (Int) -> Void, onText: @escaping (String?) -> Void) {
     self.onJump = onJump
+    self.onText = onText
   }
 
   var body: some View {
     GeometryReader { geometry in
         ZStack {
-            QuickPoseCameraView(useFrontCamera: true, delegate: quickPose)
-            QuickPoseOverlayView(overlayImage: $overlayImage)
-        }
-        .overlay(alignment: .center) {
-          if let feedbackText = feedbackText {
-            Text(feedbackText)
-            .font(.system(size: 26, weight: .semibold)).foregroundColor(.white).multilineTextAlignment(.center)
-              .padding(16)
-            .background(RoundedRectangle(cornerRadius: 8).foregroundColor(Color("AccentColor").opacity(0.8)))
-              .padding(.bottom, 40)
-          }
+          QuickPoseCameraView(useFrontCamera: false, delegate: quickPose)
+          QuickPoseOverlayView(overlayImage: $overlayImage)
         }
         .frame(width: geometry.size.width)
         .edgesIgnoringSafeArea(.all)
@@ -39,18 +31,18 @@ struct JumpingNativeView: View {
                   overlayImage = image
                   if let result = features.values.first  {
                     let counterState = counter.count(result.value)
-                    
-                    feedbackText = "\(counterState.count) Jumping Jacks"
-                    
                     onJump(counterState.count)
+                    onText("")
+                  } else if let feedback = feedback.values.first, feedback.isRequired  {
+                    onText(feedback.displayString)
                   } else {
-                    feedbackText = nil
+                    onText("")
                   }
                     
                 case .noPersonFound:
-                  feedbackText = "Stand in view";
+                  onText("Stand in view")
                 case .sdkValidationError:
-                  feedbackText = "Be back soon";
+                  onText("Be back soon");
               }
           })
         }

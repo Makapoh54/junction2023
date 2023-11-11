@@ -4,12 +4,17 @@ import UIKit
 class SquatCounterView: UIView {
 
   @objc var onSquat: RCTDirectEventBlock?
+  @objc var onText: RCTDirectEventBlock?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
-    let qpView = SquatCounterBasicView(onSquat: { squats in
+    let qpView = SquatCounterNativeView(onSquat: { squats in
       if self.onSquat != nil {
         self.onSquat!(["squats": squats])
+      }
+    }, onText: { text in
+      if self.onText != nil {
+        self.onText!(["text": text!])
       }
     })
 

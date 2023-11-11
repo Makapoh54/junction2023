@@ -12,10 +12,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA286B85B6C04FC6940260E9 /* SplashScreen.storyboard */; };
 		58504CFF2AFEC866009F110B /* SquatCounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504CFE2AFEC866009F110B /* SquatCounterView.swift */; };
-		58504D002AFEC866009F110B /* SquatCounterBasicView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504CFD2AFEC866009F110B /* SquatCounterBasicView.swift */; };
+		58504D002AFEC866009F110B /* SquatCounterNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504CFD2AFEC866009F110B /* SquatCounterNativeView.swift */; };
 		58504D012AFEC866009F110B /* SquatCounterViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504CFC2AFEC866009F110B /* SquatCounterViewManager.swift */; };
 		58504D022AFEC866009F110B /* SquatCounterViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58504CFA2AFEC865009F110B /* SquatCounterViewManager.m */; };
-		58504D042AFECB4A009F110B /* squats-pete.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58504D032AFECB49009F110B /* squats-pete.mov */; };
 		58504D062AFED7AC009F110B /* PlankNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504D052AFED7AC009F110B /* PlankNativeView.swift */; };
 		58504D082AFED95F009F110B /* PlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504D072AFED95F009F110B /* PlankView.swift */; };
 		58504D0A2AFED9C4009F110B /* PlankViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504D092AFED9C4009F110B /* PlankViewManager.swift */; };
@@ -24,6 +23,7 @@
 		58504D102AFEDCD7009F110B /* JumpingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504D0F2AFEDCD7009F110B /* JumpingView.swift */; };
 		58504D122AFEDD1D009F110B /* JumpingViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58504D112AFEDD1D009F110B /* JumpingViewManager.swift */; };
 		58504D142AFEDD42009F110B /* JumpingViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 58504D132AFEDD42009F110B /* JumpingViewManager.m */; };
+		58504D182AFF342C009F110B /* squats-pete.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58504D172AFF342C009F110B /* squats-pete.mov */; };
 		96905EF65AED1B983A6B3ABC /* libPods-junction2023.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EEBF8E8E6FB1BC6CAF49B5 /* libPods-junction2023.a */; };
 		A82078082BCD43049F06552F /* noop-file.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2854B7DD08C34822AD92DFFB /* noop-file.swift */; };
 		B18059E884C0ABDD17F3DC3D /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC715A2D49A985799AEE119 /* ExpoModulesProvider.swift */; };
@@ -41,9 +41,8 @@
 		2854B7DD08C34822AD92DFFB /* noop-file.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = "noop-file.swift"; path = "junction2023/noop-file.swift"; sourceTree = "<group>"; };
 		58504CFA2AFEC865009F110B /* SquatCounterViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SquatCounterViewManager.m; sourceTree = "<group>"; };
 		58504CFC2AFEC866009F110B /* SquatCounterViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatCounterViewManager.swift; sourceTree = "<group>"; };
-		58504CFD2AFEC866009F110B /* SquatCounterBasicView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatCounterBasicView.swift; sourceTree = "<group>"; };
+		58504CFD2AFEC866009F110B /* SquatCounterNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatCounterNativeView.swift; sourceTree = "<group>"; };
 		58504CFE2AFEC866009F110B /* SquatCounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatCounterView.swift; sourceTree = "<group>"; };
-		58504D032AFECB49009F110B /* squats-pete.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "squats-pete.mov"; sourceTree = "<group>"; };
 		58504D052AFED7AC009F110B /* PlankNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlankNativeView.swift; sourceTree = "<group>"; };
 		58504D072AFED95F009F110B /* PlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlankView.swift; sourceTree = "<group>"; };
 		58504D092AFED9C4009F110B /* PlankViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlankViewManager.swift; sourceTree = "<group>"; };
@@ -52,6 +51,7 @@
 		58504D0F2AFEDCD7009F110B /* JumpingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpingView.swift; sourceTree = "<group>"; };
 		58504D112AFEDD1D009F110B /* JumpingViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JumpingViewManager.swift; sourceTree = "<group>"; };
 		58504D132AFEDD42009F110B /* JumpingViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JumpingViewManager.m; sourceTree = "<group>"; };
+		58504D172AFF342C009F110B /* squats-pete.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "squats-pete.mov"; sourceTree = "<group>"; };
 		58EEBF8E8E6FB1BC6CAF49B5 /* libPods-junction2023.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-junction2023.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C2E3173556A471DD304B334 /* Pods-junction2023.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junction2023.debug.xcconfig"; path = "Target Support Files/Pods-junction2023/Pods-junction2023.debug.xcconfig"; sourceTree = "<group>"; };
 		7A4D352CD337FB3A3BF06240 /* Pods-junction2023.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-junction2023.release.xcconfig"; path = "Target Support Files/Pods-junction2023/Pods-junction2023.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,11 +76,11 @@
 		13B07FAE1A68108700A75B9A /* junction2023 */ = {
 			isa = PBXGroup;
 			children = (
-				58504CFD2AFEC866009F110B /* SquatCounterBasicView.swift */,
+				58504CFD2AFEC866009F110B /* SquatCounterNativeView.swift */,
 				58504CFE2AFEC866009F110B /* SquatCounterView.swift */,
 				58504CFA2AFEC865009F110B /* SquatCounterViewManager.m */,
 				58504CFC2AFEC866009F110B /* SquatCounterViewManager.swift */,
-				58504D032AFECB49009F110B /* squats-pete.mov */,
+				58504D172AFF342C009F110B /* squats-pete.mov */,
 				BB2F792B24A3F905000567C9 /* Supporting */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -240,7 +240,7 @@
 				BB2F792D24A3F905000567C9 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				3E461D99554A48A4959DE609 /* SplashScreen.storyboard in Resources */,
-				58504D042AFECB4A009F110B /* squats-pete.mov in Resources */,
+				58504D182AFF342C009F110B /* squats-pete.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,7 +383,7 @@
 				58504D0E2AFEDC0B009F110B /* JumpingNativeView.swift in Sources */,
 				A82078082BCD43049F06552F /* noop-file.swift in Sources */,
 				58504D082AFED95F009F110B /* PlankView.swift in Sources */,
-				58504D002AFEC866009F110B /* SquatCounterBasicView.swift in Sources */,
+				58504D002AFEC866009F110B /* SquatCounterNativeView.swift in Sources */,
 				58504D102AFEDCD7009F110B /* JumpingView.swift in Sources */,
 				58504D142AFEDD42009F110B /* JumpingViewManager.m in Sources */,
 			);

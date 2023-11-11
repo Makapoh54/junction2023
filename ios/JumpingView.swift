@@ -4,12 +4,17 @@ import UIKit
 class JumpingView: UIView {
 
   @objc var onJump: RCTDirectEventBlock?
+  @objc var onText: RCTDirectEventBlock?
 
   override init(frame: CGRect) {
     super.init(frame: frame)
     let qpView = JumpingNativeView(onJump: { count in
       if self.onJump != nil {
         self.onJump!(["count": count])
+      }
+    }, onText: { text in
+      if self.onText != nil {
+        self.onText!(["text": text!])
       }
     })
 
