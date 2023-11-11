@@ -1,16 +1,33 @@
 import { StatusBar } from "expo-status-bar";
-import * as React from "react";
+import React, { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
-import Excercise from "../Excercise";
-import { useIsFocused } from "@react-navigation/native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import Excercise from "../components/Excercise";
 import { ProgressBar, Divider } from "react-native-paper";
 import Modal from "../components/Modal";
-import { BlurView } from "@react-native-community/blur";
+import Prepare from "../components/Prepare";
+import DuelResults from "../components/DuelResults";
 
 export default function Duels() {
-  const [excerciseVisible, setExcerciseVisible] = React.useState(false);
-  const isFocused = useIsFocused();
+  const [spells, setSpells] = useState()
+  const [prepareVisible, setPrepareVisible] = useState(false)
+  const [excerciseVisible, setExcerciseVisible] = useState(false)
+  const [resultsVisible, setResultsVisible] = useState(false)
+
+  const openPrepare = () => setPrepareVisible(true)
+  const closePrepare = (spells) => {
+    setPrepareVisible(false)
+    if (spells.length) {
+      setSpells(spells)
+      openExcercise()
+    }
+  }
+  const openExcercise = () => setExcerciseVisible(true)
+  const openResults = () => setResultsVisible(true)
+  const closeExcercise = (done) => {
+    setExcerciseVisible(false)
+    if (done) openResults()
+  }
+  const closeResults = () => setResultsVisible(false)
 
   return (
     <View style={styles.container}>
@@ -69,17 +86,23 @@ export default function Duels() {
           <ProgressBar style={styles.progress} progress={0.5} color={"gold"} />
           <Pressable
             style={styles.button}
-            onPress={() => setExcerciseVisible(true)}
+            onPress={openPrepare}
           >
             <Text style={styles.buttonText}>⚔️ Duel ⚔️</Text>
           </Pressable>
         </View>
       </View>
-      <Modal
-        modalVisible={excerciseVisible}
-        onClose={() => setExcerciseVisible(false)}
-      >
-        <Excercise excercise="squats" />
+
+      <Modal modalVisible={prepareVisible} onClose={closePrepare}>
+        <Prepare onClose={closePrepare} />
+      </Modal>
+
+      <Modal modalVisible={excerciseVisible} onClose={() => closeExcercise()}>
+        {spells && <Excercise spells={spells} onClose={closeExcercise} />}
+      </Modal>
+
+      <Modal modalVisible={resultsVisible} onClose={closeResults}>
+        <DuelResults onClose={closeResults} />
       </Modal>
 
       <StatusBar style="auto" />
@@ -110,9 +133,14 @@ const styles = StyleSheet.create({
     opacity: 0.3,
     zIndex: 20,
   },
-  header: {
+  title: {
     fontFamily: "l-pixel-u",
-    fontSize: 35,
+    fontSize: 36,
+    color: "#232323",
+  },
+  subtitle: {
+    fontFamily: "l-pixel-u",
+    fontSize: 24,
     color: "#232323",
   },
   header2: {

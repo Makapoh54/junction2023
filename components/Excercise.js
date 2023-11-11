@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Image,
   StyleSheet,
@@ -6,7 +6,7 @@ import {
   View,
   requireNativeComponent,
 } from "react-native";
-import Spell from "./components/Spell";
+import Spell from "./Spell";
 import { throttle } from "lodash";
 
 const excerciseViewMap = {
@@ -15,18 +15,15 @@ const excerciseViewMap = {
   jumping: requireNativeComponent('JumpingView'),
 }
 
-const Excercise = () => {
-  const [excercise, setExcercise] = useState('squats')
-  const Component = excerciseViewMap[excercise]
-
+const Excercise = ({ spells, onClose }) => {
   const countRef = useRef()
   const [count, setCount] = useState(0)
   const [current, setCurrent] = useState(0)
+  const currentSpell = useMemo(() => spells[current] ?? spells[2], [current])
+  const Component = excerciseViewMap[currentSpell.workout]
 
   const [text, setText] = useState(null)
   const throttledSetText = useCallback(throttle(setText, 1000), [])
-
-  const required = useMemo(() => excercise === 'squats' ? 5 : excercise === 'plank' ? 20 : 5, [excercise])
 
   const onEvent = useCallback((name) => event => {
     const count = event.nativeEvent[name]
@@ -35,28 +32,31 @@ const Excercise = () => {
 
     countRef.current = count
 
-    if (count === required) {
+    if (count >= currentSpell.required) {
       onCompleted()
     } else {
-      setCount(Math.min(Math.round(count), required))
+      setCount(Math.min(Math.round(count), currentSpell.required))
     }
-  }, [required])
+  }, [currentSpell.required, onCompleted])
 
   const onCompleted = useCallback(() => {
     setCount(0)
     countRef.current = 0
     setCurrent(c => c + 1)
-    setExcercise(e => e === 'squats' ? 'jumping' : 'plank')
   }, [])
+
+  useEffect(() => {
+    if (current > 2) onClose(true)
+  }, [current, onClose])
 
   return (
     <View style={styles.container}>
-      <Image style={styles.background} source={require('./assets/bg.png')} />
+      <Image style={styles.background} source={require('../assets/bg.png')} />
       <View style={styles.backgroundOverlay} />
       <View style={styles.content}>
         <Text style={styles.title}>Cast a spell</Text>
         <Text style={styles.description}>
-          {excercise === 'squats' ? `Do ${required} squats` : excercise === 'plank' ? `Do ${required} seconds of plank` : `Do ${required} jumps`}
+          {currentSpell.workout === 'squats' ? `Do ${currentSpell.required} squats` : currentSpell.workout === 'plank' ? `Do ${currentSpell.required} seconds of plank` : `Do ${currentSpell.required} jumps`}
         </Text>
         <View style={styles.excerciseContainer}>
           <Component
@@ -76,7 +76,7 @@ const Excercise = () => {
           )}
         </View>
         <Text style={styles.currentProgress}>
-          {`${count} of ${required} complete`}
+          {`${count} of ${currentSpell.required} complete`}
         </Text>
         <View style={styles.progress}>
           {Array(3).fill(0).map((_, index) => (
