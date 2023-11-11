@@ -1,0 +1,324 @@
+{
+    "_reactInternalInstance": {},
+    "_reactInternals": {
+        "_debugHookTypes": null,
+        "_debugNeedsRemount": false,
+        "_debugOwner": {
+            "_debugHookTypes": [
+                ""
+            ],
+            "_debugNeedsRemount": false,
+            "_debugOwner": [],
+            "_debugSource": "",
+            "actualDuration": 2.537500001490116,
+            "actualStartTime": 16834824.3403,
+            "alternate": [],
+            "child": [],
+            "childLanes": 0,
+            "deletions": null,
+            "dependencies": null,
+            "elementType": [
+                ""
+            ],
+            "flags": 8390657,
+            "index": 0,
+            "key": null,
+            "lanes": 0,
+            "memoizedProps": [],
+            "memoizedState": [],
+            "mode": 2,
+            "pendingProps": [],
+            "ref": null,
+            "return": [],
+            "selfBaseDuration": 0.49139999970793724,
+            "sibling": null,
+            "stateNode": null,
+            "subtreeFlags": 8407557,
+            "tag": 0,
+            "treeBaseDuration": 2.3311000000685453,
+            "type": [
+                ""
+            ],
+            "updateQueue": []
+        },
+        "_debugSource": "",
+        "actualDuration": 1.2875000014901161,
+        "actualStartTime": 16834825.5145,
+        "alternate": {
+            "_debugHookTypes": null,
+            "_debugNeedsRemount": false,
+            "_debugOwner": [],
+            "_debugSource": "",
+            "actualDuration": 1.9235000014305115,
+            "actualStartTime": 16815975.8534,
+            "alternate": [],
+            "child": [],
+            "childLanes": 0,
+            "deletions": null,
+            "dependencies": null,
+            "elementType": [],
+            "flags": 1,
+            "index": 1,
+            "key": null,
+            "lanes": 0,
+            "memoizedProps": [],
+            "memoizedState": [],
+            "mode": 2,
+            "pendingProps": [],
+            "ref": [],
+            "return": [],
+            "selfBaseDuration": 0.13199999928474426,
+            "sibling": [],
+            "stateNode": [],
+            "subtreeFlags": 8391173,
+            "tag": 1,
+            "treeBaseDuration": 1.7993000000715256,
+            "type": [],
+            "updateQueue": []
+        },
+        "child": {
+            "_debugHookTypes": null,
+            "_debugNeedsRemount": false,
+            "_debugOwner": [],
+            "_debugSource": "",
+            "actualDuration": 1.1394000016152859,
+            "actualStartTime": 16834825.6594,
+            "alternate": [],
+            "child": [],
+            "childLanes": 0,
+            "deletions": null,
+            "dependencies": null,
+            "elementType": [],
+            "flags": 1,
+            "index": 0,
+            "key": null,
+            "lanes": 0,
+            "memoizedProps": [],
+            "memoizedState": null,
+            "mode": 2,
+            "pendingProps": [],
+            "ref": null,
+            "return": [],
+            "selfBaseDuration": 0.08130000159144402,
+            "sibling": null,
+            "stateNode": null,
+            "subtreeFlags": 8391173,
+            "tag": 11,
+            "treeBaseDuration": 1.047699999064207,
+            "type": [],
+            "updateQueue": null
+        },
+        "childLanes": 0,
+        "deletions": null,
+        "dependencies": null,
+        "elementType": [],
+        "flags": 1,
+        "index": 1,
+        "key": null,
+        "lanes": 0,
+        "memoizedProps": {
+            "animations": [],
+            "columns": 17,
+            "imageStyle": [],
+            "offsetX": 0,
+            "offsetY": 0,
+            "rows": 1,
+            "source": 3
+        },
+        "memoizedState": {
+            "defaultFrameHeight": 0,
+            "defaultFrameWidth": 0,
+            "frameHeight": 32,
+            "frameWidth": 24,
+            "imageHeight": 32,
+            "imageWidth": 408,
+            "offsetX": -0,
+            "offsetY": -0,
+            "translateXInputRange": [
+                ""
+            ],
+            "translateXOutputRange": [
+                ""
+            ],
+            "translateYInputRange": [
+                ""
+            ],
+            "translateYOutputRange": [
+                ""
+            ]
+        },
+        "mode": 2,
+        "pendingProps": {
+            "animations": [],
+            "columns": 17,
+            "imageStyle": [],
+            "offsetX": 0,
+            "offsetY": 0,
+            "rows": 1,
+            "source": 3
+        },
+        "ref": {
+            "current": []
+        },
+        "return": {
+            "_debugHookTypes": null,
+            "_debugNeedsRemount": false,
+            "_debugOwner": [],
+            "_debugSource": "",
+            "actualDuration": 1.8251000046730042,
+            "actualStartTime": 16834825.0648,
+            "alternate": [],
+            "child": [],
+            "childLanes": 0,
+            "deletions": null,
+            "dependencies": null,
+            "elementType": "RCTView",
+            "flags": 4,
+            "index": 0,
+            "key": null,
+            "lanes": 0,
+            "memoizedProps": [],
+            "memoizedState": null,
+            "mode": 2,
+            "pendingProps": [],
+            "ref": null,
+            "return": [],
+            "selfBaseDuration": 0.06320000067353249,
+            "sibling": null,
+            "stateNode": [
+                ""
+            ],
+            "subtreeFlags": 8407557,
+            "tag": 5,
+            "treeBaseDuration": 1.651400001719594,
+            "type": "RCTView",
+            "updateQueue": null
+        },
+        "selfBaseDuration": 0.13379999995231628,
+        "sibling": {
+            "_debugHookTypes": [
+                ""
+            ],
+            "_debugNeedsRemount": false,
+            "_debugOwner": [],
+            "_debugSource": "",
+            "actualDuration": 0.18569999933242798,
+            "actualStartTime": 16834826.989,
+            "alternate": [],
+            "child": [],
+            "childLanes": 0,
+            "deletions": null,
+            "dependencies": null,
+            "elementType": [
+                ""
+            ],
+            "flags": 8407041,
+            "index": 2,
+            "key": null,
+            "lanes": 0,
+            "memoizedProps": [],
+            "memoizedState": [],
+            "mode": 2,
+            "pendingProps": [],
+            "ref": null,
+            "return": [],
+            "selfBaseDuration": 0.12640000134706497,
+            "sibling": null,
+            "stateNode": null,
+            "subtreeFlags": 5,
+            "tag": 0,
+            "treeBaseDuration": 0.16290000081062317,
+            "type": [
+                ""
+            ],
+            "updateQueue": []
+        },
+        "stateNode": [],
+        "subtreeFlags": 8391173,
+        "tag": 1,
+        "treeBaseDuration": 1.1814999990165234,
+        "type": [],
+        "updateQueue": {
+            "baseState": [],
+            "effects": null,
+            "firstBaseUpdate": null,
+            "lastBaseUpdate": null,
+            "shared": []
+        }
+    },
+    "context": {},
+    "generateInterpolationRanges": [],
+    "getFrameCoords": [],
+    "interpolationRanges": {
+        "end": {
+            "translateX": [],
+            "translateY": []
+        },
+        "loop": {
+            "translateX": [],
+            "translateY": []
+        },
+        "start": {
+            "translateX": [],
+            "translateY": []
+        }
+    },
+    "play": [],
+    "props": {
+        "animations": {
+            "end": [
+                ""
+            ],
+            "loop": [
+                ""
+            ],
+            "start": [
+                ""
+            ]
+        },
+        "columns": 17,
+        "imageStyle": {
+            "marginTop": -1
+        },
+        "offsetX": 0,
+        "offsetY": 0,
+        "rows": 1,
+        "source": 3
+    },
+    "refs": {},
+    "reset": [],
+    "state": {
+        "defaultFrameHeight": 0,
+        "defaultFrameWidth": 0,
+        "frameHeight": 32,
+        "frameWidth": 24,
+        "imageHeight": 32,
+        "imageWidth": 408,
+        "offsetX": -0,
+        "offsetY": -0,
+        "translateXInputRange": [
+            0,
+            1
+        ],
+        "translateXOutputRange": [
+            0,
+            1
+        ],
+        "translateYInputRange": [
+            0,
+            1
+        ],
+        "translateYOutputRange": [
+            0,
+            1
+        ]
+    },
+    "stop": [],
+    "time": 0,
+    "updater": {
+        "enqueueForceUpdate": [],
+        "enqueueReplaceState": [],
+        "enqueueSetState": [],
+        "isMounted": []
+    }
+}

@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "app.pupalupa.junction2023"
     },
     "web": {
       "favicon": "./assets/favicon.png"
