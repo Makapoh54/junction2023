@@ -6,11 +6,13 @@ import { ProgressBar, Divider } from "react-native-paper";
 import Modal from "../components/Modal";
 import Prepare from "../components/Prepare";
 import DuelResults from "../components/DuelResults";
+import Versus from "../components/Versus";
 
 export default function Duels() {
   const [spells, setSpells] = useState()
   const [prepareVisible, setPrepareVisible] = useState(false)
   const [excerciseVisible, setExcerciseVisible] = useState(false)
+  const [versusVisible, setVersusVisible] = useState(false)
   const [resultsVisible, setResultsVisible] = useState(false)
 
   const openPrepare = () => setPrepareVisible(true)
@@ -22,10 +24,15 @@ export default function Duels() {
     }
   }
   const openExcercise = () => setExcerciseVisible(true)
+  const openVersus = () => setVersusVisible(true)
   const openResults = () => setResultsVisible(true)
+  const closeVersus = () => {
+    setVersusVisible(false)
+    openResults()
+  }
   const closeExcercise = (done) => {
     setExcerciseVisible(false)
-    if (done) openResults()
+    if (done) openVersus()
   }
   const closeResults = () => setResultsVisible(false)
 
@@ -101,7 +108,11 @@ export default function Duels() {
         {spells && <Excercise spells={spells} onClose={closeExcercise} />}
       </Modal>
 
-      <Modal modalVisible={resultsVisible} onClose={closeResults}>
+      <Modal modalVisible={versusVisible}>
+        <Versus spells={spells} opponentSpells={spells} onClose={closeVersus} />
+      </Modal>
+
+      <Modal modalVisible={resultsVisible}>
         <DuelResults onClose={closeResults} />
       </Modal>
 

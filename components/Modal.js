@@ -10,9 +10,9 @@ const Modal = ({ modalVisible, onClose, children }) => (
       onRequestClose={() => {
         Alert.alert('Modal has been closed.');
       }}>
-      <Pressable style={styles.close} onPress={onClose}>
+      {onClose && <Pressable style={styles.close} onPress={onClose}>
         <Text style={styles.closeText}>x</Text>
-      </Pressable>
+      </Pressable>}
       {children}
     </RawModal>
   </View>

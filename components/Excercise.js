@@ -79,8 +79,8 @@ const Excercise = ({ spells, onClose }) => {
           {`${count} of ${currentSpell.required} complete`}
         </Text>
         <View style={styles.progress}>
-          {Array(3).fill(0).map((_, index) => (
-            <Spell key={index} size='small' style={index && styles.spellMargin} type={index === 0 ? 'cardio' : index === 1 ? 'yoga' : 'strength'} inactive={current <= index} />
+          {spells.map((spell, index) => (
+            <Spell key={spell.id} size='small' style={index && styles.spellMargin} type={spell.type} inactive={current <= index} />
           ))}
         </View>
       </View>
