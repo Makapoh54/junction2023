@@ -8,6 +8,7 @@ export default function TabBar({ state, descriptors, navigation }) {
         paddingLeft: 5,
         paddingRight: 5,
         paddingTop: 10,
+        paddingBottom: 20,
         backgroundColor: "transparent",
         borderTopWidth: 0,
         position: "absolute",

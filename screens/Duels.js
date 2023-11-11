@@ -1,16 +1,15 @@
 import { StatusBar } from "expo-status-bar";
 import * as React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { Button, Pressable, StyleSheet, Text, View } from "react-native";
 import Excercise from "../Excercise";
 import { useIsFocused } from "@react-navigation/native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import ImageButton from "./ImageButton";
-import { ProgressBar, MD3Colors } from "react-native-paper";
+import { ProgressBar } from "react-native-paper";
+import Modal from "../components/Modal";
 
 export default function Duels() {
+  const [excerciseVisible, setExcerciseVisible] = React.useState(false)
   const isFocused = useIsFocused();
-
-  //return isFocused ? <Excercise excercise='squats' /> : null
 
   return (
     <SafeAreaView style={styles.container}>
@@ -18,10 +17,18 @@ export default function Duels() {
       <Text style={[styles.header2]}>🌟  The Arcane Workout Wars! 🌟</Text>
 
       <View style={{padding: 10}}>
-        <Text style={[styles.header2]}>Level 4</Text>
-        <ProgressBar progress={0.5} color={"gold"} />
-        <ImageButton />
+        <Text style={[styles.level]}>Level 4</Text>
+        <ProgressBar style={styles.progress} progress={0.5} color={"gold"} />
+        <Pressable style={styles.button} onPress={() => setExcerciseVisible(true)}>
+          <Text style={styles.buttonText}>
+            ⚔️ Duel ⚔️
+          </Text>
+        </Pressable>
       </View>
+
+      <Modal modalVisible={excerciseVisible} onClose={() => setExcerciseVisible(false)}>
+        <Excercise excercise='squats' />
+      </Modal>
 
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -36,12 +43,31 @@ const styles = StyleSheet.create({
   },
   header: {
     fontFamily: "l-pixel-u",
-    fontSize: 25,
+    fontSize: 35,
     color: "#232323",
   },
-  header2: {
+  level: {
     fontFamily: "l-pixel-u",
-    fontSize: 20,
+    fontSize: 26,
     color: "#232323",
+    marginBottom: 5
   },
+  progress: {
+    height: 10,
+    borderRadius: 5
+  },
+  button: {
+    marginTop: 30,
+    backgroundColor: 'gold',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    alignItems: 'center',
+    borderRadius: 8,
+    borderWidth: 4,
+    borderColor: '#8c7062'
+  },
+  buttonText: {
+    fontFamily: "l-pixel-u",
+    fontSize: 36
+  }
 });

@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { Image } from "react-native";
+import { ActivityIndicator, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Duels from "./screens/Duels";
 import SpellBook from "./screens/SpellBook";
@@ -20,6 +20,8 @@ function App() {
     Joystix: require("./assets/fonts/joystix.otf"),
     "l-pixel-u": require("./assets/fonts/l-pixel-u.ttf"),
   });
+
+  if (!fontsLoaded) return <ActivityIndicator />
 
   return (
     <NavigationContainer>
