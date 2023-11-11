@@ -9,10 +9,12 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/blur": "^4.3.2",
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/bottom-tabs": "^6.5.11",
     "@react-navigation/native": "^6.1.9",
     "expo": "~49.0.15",
+    "expo-app-loading": "^2.1.1",
     "expo-font": "^11.6.0",
     "expo-splash-screen": "~0.20.5",
     "expo-status-bar": "~1.6.0",

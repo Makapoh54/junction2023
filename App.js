@@ -1,4 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
+import AppLoading from 'expo-app-loading';
 import { ActivityIndicator, Image } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Duels from "./screens/Duels";
@@ -12,7 +13,6 @@ import TabBar from "./screens/TabBar";
 // import Squats from './Squats'
 // import Plank from './Plank'
 // import Jumping from './Jumping'
-
 const Tab = createBottomTabNavigator();
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
     "l-pixel-u": require("./assets/fonts/l-pixel-u.ttf"),
   });
 
-  if (!fontsLoaded) return <ActivityIndicator />
+  if (!fontsLoaded) return <AppLoading />
 
   return (
     <NavigationContainer>

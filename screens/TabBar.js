@@ -12,7 +12,7 @@ export default function TabBar({ state, descriptors, navigation }) {
         backgroundColor: "transparent",
         borderTopWidth: 0,
         position: "absolute",
-        bottom: 0
+        bottom: 0,
       }}
     >
       {state.routes.map((route, index) => {
@@ -58,9 +58,11 @@ export default function TabBar({ state, descriptors, navigation }) {
             <options.tabBarIcon />
             <Text
               style={{
-                color: isFocused ? "gold" : "#232323",
+                color: isFocused ? "orange" : "#232323",
                 fontFamily: "l-pixel-u",
                 fontSize: 20,
+                textShadowColor: "gray",
+                textShadowRadius: 3,
               }}
             >
               {label}
