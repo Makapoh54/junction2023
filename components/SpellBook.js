@@ -3,42 +3,60 @@ import Spell from './Spell';
 import { useState } from 'react';
 import { without } from 'lodash';
 
-// const Spells = Array(10).fill(0).map((_, index) => ({
-//   id: index,
-//   name: 'Fireball',
-//   description: 'A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame.',
-//   locked: index > 2
-// }))
-
 const Spells = [
   {
     id: 1,
-    name: 'Fireball',
-    description: 'A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame.',
+    name: 'Aerobic Surge',
+    description: 'Harness the power of Aerobic Surge – a spell merging precise moves and controlled breath. Fuel your endurance, elevate your heart rate, and fortify resilience through disciplined Jumping Jacks. 🌿🌀',
     level: 1,
-    // workout: 'jumping',
-    workout: 'squats',
-    type: 'cardio',
-    required: 2
+    workout: 'jumping',
+    // workout: 'squats',
+    type: 'strength',
+    required: 2,
+    image: require('../assets/jump1.png')
   },
   {
     id: 2,
-    name: 'Snowball',
-    description: 'A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame.',
+    name: 'Ember Squat',
+    description: 'Master the Ember Squat, where controlled descent kindles an internal flame. This spell not only sculpts muscles but fuels your magical prowess, readying you for intense duels. 🔥💪',
     level: 1,
     workout: 'squats',
-    type: 'strength',
-    required: 2
+    type: 'cardio',
+    required: 2,
+    image: require('../assets/squat1.png')
   },
   {
     id: 3,
-    name: 'Shadow Pierce',
-    description: 'A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame.',
+    name: 'Terra Stalwart',
+    description: 'Embrace Terra Stalwart, a spell rooted in resilience. Planking becomes an earthbound ritual, fortifying not only your core but also grounding your magical endurance. 🌿💪',
+    level: 1,
+    workout: 'plank',
+    // workout: 'squats',
+    type: 'yoga',
+    required: 2,
+    image: require('../assets/plank1.png')
+  },
+  {
+    id: 4,
+    name: 'Celestial Push Power',
+    description: 'Embrace the Celestial Push Power, a spell where each push-up channels cosmic strength, sculpting not just your body but also your magical might. 🌌💪',
     level: 1,
     // workout: 'plank',
     workout: 'squats',
+    type: 'jumping',
+    required: 2,
+    image: require('../assets/jumping2.png')
+  },
+  {
+    id: 5,
+    name: 'Quantum Pull',
+    description: 'Experience the Quantum Pull, a spell infusing pull-ups with quantum strength, sculpting your physique and bending the magical fabric of fitness. 🌀💪',
+    level: 4,
+    // workout: 'plank',
+    workout: 'squats',
     type: 'yoga',
-    required: 2
+    required: 2,
+    image: require('../assets/hero.png')
   },
 ]
 
@@ -61,13 +79,14 @@ const SpellBook = ({ level, header, showLocked, selectable, onConfirm }) => {
           }}>
             {locked && (
               <View style={styles.locked}>
-                <Text style={styles.lockedText}>Locked</Text>
+                <Text style={styles.lockedTitle}>Locked</Text>
+                <Text style={styles.lockedText}>{`Unlock at level ${spell.level}`}</Text>
               </View>
             )}
             {selected.includes(spell) && (
               <View style={styles.selected} />
             )}
-            <Spell type={spell.type} />
+            <Spell type={spell.type} image={spell.image} />
             <View style={styles.texts}>
               <Text style={styles.name}>{spell.name}</Text>
               <Text style={styles.description}>{spell.description}</Text>
@@ -99,6 +118,7 @@ const styles = StyleSheet.create({
     flex: 1,
     marginVertical: 20,
     flexDirection: 'row',
+    alignItems: 'center'
   },
   locked: {
     position: 'absolute',
@@ -110,14 +130,19 @@ const styles = StyleSheet.create({
     borderWidth: 6,
     borderRadius: 8,
     borderColor: 'black',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: 'rgba(0, 0, 0, 0.9)',
     justifyContent: 'center',
     alignItems: 'center',
     zIndex: 40
   },
-  lockedText: {
+  lockedTitle: {
     fontFamily: 'l-pixel-u',
     fontSize: 45,
+    color: 'white',
+  },
+  lockedText: {
+    fontFamily: 'l-pixel-u',
+    fontSize: 24,
     color: 'white',
   },
   selected: {
@@ -129,7 +154,7 @@ const styles = StyleSheet.create({
     borderStyle: 'dashed',
     borderWidth: 6,
     borderRadius: 8,
-    borderColor: '#6ac73c',
+    borderColor: 'turquoise',
     zIndex: 40
   },
   texts: {
@@ -138,13 +163,14 @@ const styles = StyleSheet.create({
   },
   name: {
     fontFamily: 'l-pixel-u',
-    fontSize: 30,
-    color: '#232323'
+    fontSize: 26,
+    marginBottom: 5,
+    color: 'white'
   },
   description: {
     fontFamily: 'l-pixel-u',
     fontSize: 18,
-    color: '#232323'
+    color: 'white'
   },
   button: {
     marginTop: 30,

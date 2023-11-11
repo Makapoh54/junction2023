@@ -13,11 +13,12 @@ function randomRotation() {
 export default function SpellBook() {
   return (
     <View style={styles.container}>
-      <Image style={styles.background} source={require('../assets/scroll-background.jpg')} />
+      <Image style={styles.background} source={require('../assets/library.png')} />
       <View style={styles.backgroundOverlay} />
       <View style={{zIndex: 30}}>
         <SpellBookComponent
           showLocked
+          level={1}
           header={(
             <View style={styles.header}>
               <Text style={styles.title}>SpellBook</Text>
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     backgroundColor: 'black',
-    opacity: 0.3,
+    opacity: 0.7,
     zIndex: 20
   },
   header: {
@@ -61,11 +62,11 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: 'l-pixel-u',
     fontSize: 50,
-    color: '#232323'
+    color: 'white'
   },
   subtitle: {
     fontFamily: 'l-pixel-u',
     fontSize: 24,
-    color: '#232323'
+    color: 'white'
   },
 });

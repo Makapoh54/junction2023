@@ -21,7 +21,7 @@ function App() {
     "l-pixel-u": require("./assets/fonts/l-pixel-u.ttf"),
   });
 
-  if (!fontsLoaded) return <AppLoading />
+  if (!fontsLoaded) return null
 
   return (
     <NavigationContainer>

@@ -7,15 +7,21 @@ import Modal from "../components/Modal";
 import Prepare from "../components/Prepare";
 import DuelResults from "../components/DuelResults";
 import Versus from "../components/Versus";
+import Invite from "../components/Invite";
 
 export default function Duels() {
   const [spells, setSpells] = useState()
+  const [inviteVisible, setInviteVisible] = useState(true)
   const [prepareVisible, setPrepareVisible] = useState(false)
   const [excerciseVisible, setExcerciseVisible] = useState(false)
   const [versusVisible, setVersusVisible] = useState(false)
   const [resultsVisible, setResultsVisible] = useState(false)
 
-  const openPrepare = () => setPrepareVisible(true)
+  const closeInvite = () => setInviteVisible(false)
+  const openPrepare = () => {
+    closeInvite()
+    setPrepareVisible(true)
+  }
   const closePrepare = (spells) => {
     setPrepareVisible(false)
     if (spells.length) {
@@ -38,7 +44,9 @@ export default function Duels() {
 
   return (
     <View style={styles.container}>
-      <View style={{ margin: 20, zIndex: 30 }}>
+      <Image style={styles.background} source={require('../assets/castle.jpg')} />
+      <View style={styles.backgroundOverlay} />
+      <View style={{ marginVertical: 60, marginHorizontal: 20, justifyContent: 'center', alignItems: 'center', zIndex: 30 }}>
         <Text style={[styles.header]}>Season 1</Text>
         <Text style={[styles.header2, { paddingBottom: 10 }]}>
           🌟 The Arcane Workout Duels! 🌟
@@ -56,23 +64,22 @@ export default function Duels() {
             marginBottom: 10,
           }}
         >
-          <Image
+          {/* <Image
             source={require("../assets/castle.jpg")}
             style={{
               width: 350,
               height: 350,
-              borderRadius: 350 / 2,
+              // borderRadius: 350 / 2,
               position: "absolute",
-              elevation: 2,
-              opacity: 0.9,
+              opacity: 0.3,
               top: 10,
             }}
-            blurRadius={6}
-          />
+            // blurRadius={6}
+          /> */}
 
           <Text
             style={[
-              styles.header2,
+              styles.header3,
               {
                 paddingTop: 100,
                 textShadowColor: "white",
@@ -99,6 +106,8 @@ export default function Duels() {
           </Pressable>
         </View>
       </View>
+
+      <Invite modalVisible={inviteVisible} onAccept={openPrepare} onClose={closeInvite} />
 
       <Modal modalVisible={prepareVisible} onClose={closePrepare}>
         <Prepare onClose={closePrepare} />
@@ -141,28 +150,38 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     backgroundColor: "black",
-    opacity: 0.3,
+    opacity: 0.8,
     zIndex: 20,
   },
   title: {
     fontFamily: "l-pixel-u",
     fontSize: 36,
-    color: "#232323",
+    color: "white",
   },
   subtitle: {
     fontFamily: "l-pixel-u",
     fontSize: 24,
-    color: "#232323",
+    color: "white",
+  },
+  header: {
+    fontFamily: "l-pixel-u",
+    fontSize: 24,
+    color: "white",
   },
   header2: {
     fontFamily: "l-pixel-u",
     fontSize: 20,
-    color: "#232323",
+    color: "white",
+  },
+  header3: {
+    fontFamily: "l-pixel-u",
+    fontSize: 24,
+    color: "white",
   },
   level: {
     fontFamily: "l-pixel-u",
     fontSize: 26,
-    color: "#232323",
+    color: "white",
     marginBottom: 5,
   },
   progress: {

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Alert, Pressable, Modal as RawModal, StyleSheet, Text, View } from 'react-native';
 
-const Modal = ({ modalVisible, onClose, children }) => (
+const Modal = ({ animationType = 'fade', modalVisible, onClose, children }) => (
   <View style={styles.centeredView}>
     <RawModal
-      animationType="fade"
+      animationType={animationType}
       transparent={true}
       visible={modalVisible}
       onRequestClose={() => {

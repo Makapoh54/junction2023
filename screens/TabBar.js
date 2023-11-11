@@ -54,12 +54,12 @@ export default function TabBar({ state, descriptors, navigation }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{ flex: 1, alignItems: "center" }}
+            style={{ flex: 1, alignItems: "center", backgroundColor: 'rgba(0,0,0,0.7)', borderRadius: 20, marginHorizontal: 5, justifyContent: 'center', alignItems: 'center', paddingVertical: 5 }}
           >
             <options.tabBarIcon />
             <Text
               style={{
-                color: isFocused ? "orange" : "#232323",
+                color: isFocused ? "orange" : "white",
                 fontFamily: "l-pixel-u",
                 fontSize: 20,
                 textShadowColor: "gray",

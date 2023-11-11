@@ -19,7 +19,11 @@ struct JumpingNativeView: View {
   var body: some View {
     GeometryReader { geometry in
         ZStack {
-          QuickPoseCameraView(useFrontCamera: false, delegate: quickPose)
+          if let url = Bundle.main.url(forResource: "jump", withExtension: "mov") {
+            QuickPoseSimulatedCameraView(useFrontCamera: true, delegate: quickPose, video: url)
+          } else {
+            QuickPoseCameraView(useFrontCamera: true, delegate: quickPose)
+          }
           QuickPoseOverlayView(overlayImage: $overlayImage)
         }
         .frame(width: geometry.size.width)

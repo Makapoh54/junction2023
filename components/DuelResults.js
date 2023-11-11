@@ -17,7 +17,7 @@ const DuelResults = ({ result = 'victory', onClose }) => {
         {result === 'victory' ? 'Victory!' : 'Defeat!'}
       </Text>
       <Text style={styles.subtitle}>
-        {result === 'victory' ? 'Some fancy text for victory' : 'Some grumpy text for loss'}
+        {result === 'victory' ? 'You flawlessly defeated your opponent! He needs to learn new skills to beat you.' : 'You were defeated! You need to learn new skills to beat this level opponent.'}
       </Text>
       <Text style={styles.exp}>
         {`${30} experience gained`}

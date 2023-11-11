@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Image,
   StyleSheet,
@@ -7,7 +7,11 @@ import {
 } from "react-native";
 import Spell from "./Spell";
 
-const Versus = ({ spells, opponentSpells }) => {
+const Versus = ({ spells, opponentSpells, onClose }) => {
+  useEffect(() => {
+    setTimeout(onClose, 5000);
+  }, [])
+
   return (
     <View style={styles.container}>
       <Image style={styles.background} source={require('../assets/bg.png')} />
