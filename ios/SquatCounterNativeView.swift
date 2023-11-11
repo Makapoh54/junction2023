@@ -19,11 +19,7 @@ struct SquatCounterNativeView: View {
   var body: some View {
     GeometryReader { geometry in
       ZStack {
-        if let url = Bundle.main.url(forResource: "squat", withExtension: "mov") {
-          QuickPoseSimulatedCameraView(useFrontCamera: true, delegate: quickPose, video: url)
-        } else {
-          QuickPoseCameraView(useFrontCamera: true, delegate: quickPose)
-        }
+        QuickPoseCameraView(useFrontCamera: true, delegate: quickPose)
         QuickPoseOverlayView(overlayImage: $overlayImage)
       }
       .frame(width: geometry.size.width)

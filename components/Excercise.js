@@ -80,7 +80,7 @@ const Excercise = ({ spells, onClose }) => {
         </Text>
         <View style={styles.progress}>
           {spells.map((spell, index) => (
-            <Spell key={spell.id} size='small' style={index && styles.spellMargin} type={spell.type} inactive={current <= index} />
+            <Spell key={spell.id} size='small' style={index && styles.spellMargin} type={spell.type} inactive={current <= index} image={spell.image} />
           ))}
         </View>
       </View>

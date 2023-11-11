@@ -118,7 +118,7 @@ export default function Duels() {
       </Modal>
 
       <Modal modalVisible={versusVisible}>
-        <Versus spells={spells} opponentSpells={spells} onClose={closeVersus} />
+        {spells && <Versus spells={spells} opponentSpells={[...spells].reverse()} onClose={closeVersus} />}
       </Modal>
 
       <Modal modalVisible={resultsVisible}>

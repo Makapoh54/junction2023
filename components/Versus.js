@@ -9,7 +9,7 @@ import Spell from "./Spell";
 
 const Versus = ({ spells, opponentSpells, onClose }) => {
   useEffect(() => {
-    setTimeout(onClose, 5000);
+    setTimeout(onClose, 10000);
   }, [])
 
   return (
@@ -19,7 +19,7 @@ const Versus = ({ spells, opponentSpells, onClose }) => {
       <View style={styles.content}>
         <View style={styles.avatarWrapper}>
           <Image
-            source={require("../assets/anton.jpeg")}
+            source={require("../assets/dima.jpeg")}
             style={styles.avatar}
           />
           <Image
@@ -29,7 +29,7 @@ const Versus = ({ spells, opponentSpells, onClose }) => {
         </View>
         <View style={styles.spells}>
           {opponentSpells.map((spell, index) => (
-            <Spell key={spell.id} size='small' style={index && styles.spellMargin} type={spell.type} />
+            <Spell key={spell.id} size='small' style={index && styles.spellMargin} type={spell.type} image={spell.image} />
           ))}
         </View>
         <Text style={styles.versus}>
@@ -37,12 +37,12 @@ const Versus = ({ spells, opponentSpells, onClose }) => {
         </Text>
         <View style={styles.spells}>
           {spells.map((spell, index) => (
-            <Spell key={spell.id} size='small' style={index && styles.spellMargin} type={spell.type} />
+            <Spell key={spell.id} size='small' style={index && styles.spellMargin} type={spell.type} image={spell.image} />
           ))}
         </View>
         <View style={styles.avatarWrapper}>
           <Image
-            source={require("../assets/dima.jpeg")}
+            source={require("../assets/anton.jpeg")}
             style={styles.avatar}
           />
           <Image

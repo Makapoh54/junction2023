@@ -8,7 +8,7 @@ struct PlankNativeView: View {
   public let onTime: ((Double) -> ())
   public let onText: ((String?) -> ())
 
-  @State private var timer = QuickPoseThresholdTimer(threshold: 0.2)
+  @State private var timer = QuickPoseThresholdTimer(threshold: 0.4)
   @State var overlayImage: UIImage?
 
   init(onTime: @escaping (Double) -> Void, onText: @escaping (String?) -> Void) {
@@ -19,11 +19,7 @@ struct PlankNativeView: View {
   var body: some View {
     GeometryReader { geometry in
         ZStack {
-          if let url = Bundle.main.url(forResource: "plank", withExtension: "mov") {
-            QuickPoseSimulatedCameraView(useFrontCamera: true, delegate: quickPose, video: url)
-          } else {
-            QuickPoseCameraView(useFrontCamera: true, delegate: quickPose)
-          }
+          QuickPoseCameraView(useFrontCamera: true, delegate: quickPose)
           QuickPoseOverlayView(overlayImage: $overlayImage)
         }
         .frame(width: geometry.size.width)
